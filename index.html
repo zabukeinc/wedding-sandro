@@ -35,11 +35,15 @@
       <a href="#gla_page" class="gla_top ti ti-angle-up gla_go"></a>
 
       <!-- Music -->
-      <div class="gla_music_icon" onclick=handleMusic()>
+      <div
+        class="gla_music_icon"
+        onclick="handleMusic()"
+        style="z-index: 9999999"
+      >
         <i class="ti ti-music"></i>
       </div>
-      <audio controls autoplay hidden>
-        <source src="background_music.mp3" type="audio/mpeg" id="background_music" />
+      <audio hidden id="background_music">
+        <source src="background_music.mp3" type="audio/mp3" />
       </audio>
       <div class="gla_music_icon_cont">
         <!-- <iframe
@@ -55,7 +59,6 @@
               <div class="gla_logo_txt">
                 <!-- Logo -->
                 <a href="/" class="gla_logo">Rifqi & Anggi</a>
-
                 <!-- Text Logo -->
                 <div class="gla_logo_und">Sabtu, 30 Oktober 2021</div>
               </div>
@@ -155,7 +158,7 @@
         <!-- section end -->
 
         <!-- section -->
-        <section class="gla_section" style="background-color: #EDEDED;">
+        <section class="gla_section" style="background-color: #ededed">
           <div class="container text-center">
             <p>
               <img
@@ -312,16 +315,20 @@
     <script src="js/glanz_script.js"></script>
 
     <script>
-        window.addEventListener("DOMContentLoaded", event => {
-            const audio = document.getElementById("#background_music")
-            audio.play()
-        })
+      var audio = document.getElementById('background_music')
 
-        function handleMusic () {
-            const audio = document.getElementById("#background_music")
+      audio.play()
 
-            audio.stop()
+      let isPlaying = true
+
+      function handleMusic() {
+        if (isPlaying) {
+          audio.pause()
+        } else {
+          audio.play()
         }
+        isPlaying = !isPlaying
+      }
     </script>
   </body>
 </html>
