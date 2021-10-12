@@ -6009,6 +6009,9 @@ header nav.gla_transp_nav {
 h3 {
 	font:italic 400 20px/30px Playfair Display, Arial
 }
+h5 {
+	font:italic 400 15px/25px Playfair Display, Arial
+}
 .gla_portfolio_footer_grey:after,
 .gla_portfolio_footer_white:after {
 	display: none;
